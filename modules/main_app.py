@@ -356,16 +356,12 @@ class MainAppUi(QtWidgets.QMainWindow):
 
         useCustomTheme = True
 
-        # SET THEME AND HACKS
-        if useCustomTheme:
-            # LOAD AND APPLY STYLE
-            modules.UIFunctions.theme(self, "themes/py_dracula_light.qss", True)
 
-            # SET HACKS
+        if useCustomTheme:
+            modules.UIFunctions.theme(self, "themes/py_dracula_light.qss", True)
             modules.AppFunctions.setThemeHack(self)
 
-        # SET HOME PAGE AND SELECT MENU
-        # ///////////////////////////////////////////////////////////////
+
         self.stackedWidget.setCurrentWidget(self.home)
         self.btn_home.setStyleSheet(modules.UIFunctions.selectMenu(self.btn_home.styleSheet()))
 

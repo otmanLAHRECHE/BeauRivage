@@ -29,6 +29,14 @@ from modules import main_app
 from widgets import *
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
+
+try:
+    from ctypes import windll  # Only exists on Windows.
+    myappid = 'EPSP_Djanet.EPSP_Guard.1'
+    windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+except ImportError:
+    pass
+
 # SET AS GLOBAL WIDGETS
 # ///////////////////////////////////////////////////////////////
 widgets = None
