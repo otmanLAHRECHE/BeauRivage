@@ -267,8 +267,6 @@ class UIFunctions(MainWindow):
         # MINIMIZE
         self.minimizeAppBtn.clicked.connect(lambda: self.showMinimized())
 
-        # MAXIMIZE/RESTORE
-        self.maximizeRestoreAppBtn.clicked.connect(lambda: UIFunctions.maximize_restore(self))
 
         # CLOSE APPLICATION
         self.closeAppBtn.clicked.connect(lambda: self.close())
