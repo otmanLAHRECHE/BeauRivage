@@ -20,11 +20,12 @@ import platform
 
 # IMPORT / GUI AND MODULES AND WIDGETS
 # ///////////////////////////////////////////////////////////////
-from PyQt5 import Qt
+from PyQt5 import Qt, uic
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow, QHeaderView, QApplication
 
 from modules import *
+from modules import main_app
 from widgets import *
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
@@ -34,7 +35,13 @@ widgets = None
 
 class MainWindow(QMainWindow):
     def __init__(self):
+
+        self.next_page = main_app.MainAppUi()
+        self.next_page.show()
+
+    """
         QMainWindow.__init__(self)
+
 
         # SET AS GLOBAL WIDGETS
         # ///////////////////////////////////////////////////////////////
@@ -49,8 +56,8 @@ class MainWindow(QMainWindow):
 
         # APP NAME
         # ///////////////////////////////////////////////////////////////
-        title = "PyDracula - Modern GUI"
-        description = "PyDracula APP - Theme with colors based on Dracula for Python."
+        title = "COMPLEXE BEAU RIVAGE Zelfana"
+        description = "COMPLEXE BEAU RIVAGE Application"
         # APPLY TEXTS
         self.setWindowTitle(title)
         widgets.titleRightInfo.setText(description)
@@ -136,6 +143,8 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
 
+            
+
         if btnName == "btn_save":
             print("Save BTN clicked!")
 
@@ -160,9 +169,12 @@ class MainWindow(QMainWindow):
             print('Mouse click: LEFT CLICK')
         if event.buttons() == Qt.RightButton:
             print('Mouse click: RIGHT CLICK')
+            
+            
+    """
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("icon.ico"))
+    app.setWindowIcon(QIcon("./images/icons/app_icon.ico"))
     window = MainWindow()
     sys.exit(app.exec_())

@@ -32,7 +32,7 @@ QToolTip {
 	background-position: left center;
     background-repeat: no-repeat;
 	border: none;
-	border-left: 2px solid rgb(255, 121, 198);
+	border-left: 2px solid #FDDE6C;
 	text-align: left;
 	padding-left: 8px;
 	margin: 0px;
@@ -58,7 +58,7 @@ Left Menu */
 	background-repeat: no-repeat;
 }
 #titleLeftApp { font: 63 12pt "Segoe UI Semibold"; color: #f8f8f2; }
-#titleLeftDescription { font: 8pt "Segoe UI"; color: #bd93f9; }
+#titleLeftDescription { font: 8pt "Segoe UI"; color: #FDDE6C; }
 
 /* MENUS */
 #topMenu .QPushButton {	
@@ -260,12 +260,12 @@ QHeaderView::section:vertical
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 LineEdit */
 QLineEdit {
-	background-color: #6272a4;
+	background-color: #6283A4;
 	border-radius: 5px;
 	border: 2px solid #6272a4;
 	padding-left: 10px;
 	selection-color: rgb(255, 255, 255);
-	selection-background-color: #6283A4;
+	selection-background-color: #243E5B;
     color: #f8f8f2;
 }
 QLineEdit:hover {
@@ -278,11 +278,11 @@ QLineEdit:focus {
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 PlainTextEdit */
 QPlainTextEdit {
-	background-color: #6272a4;
+	background-color: #6283A4;
 	border-radius: 5px;
 	padding: 10px;
 	selection-color: rgb(255, 255, 255);
-	selection-background-color: #6283A4;
+	selection-background-color: #243E5B;
     color: #f8f8f2;
 }
 QPlainTextEdit  QScrollBar:vertical {
@@ -302,19 +302,19 @@ QPlainTextEdit:focus {
 ScrollBars */
 QScrollBar:horizontal {
     border: none;
-    background: #6272a4;
+    background: #6283A4;
     height: 8px;
     margin: 0px 21px 0 21px;
 	border-radius: 0px;
 }
 QScrollBar::handle:horizontal {
-    background: rgb(189, 147, 249);
+    background: #2B5D7A;
     min-width: 25px;
 	border-radius: 4px
 }
 QScrollBar::add-line:horizontal {
     border: none;
-    background: #6272a4;
+    background: #6283A4;
     width: 20px;
 	border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -323,7 +323,7 @@ QScrollBar::add-line:horizontal {
 }
 QScrollBar::sub-line:horizontal {
     border: none;
-    background: #6272a4;
+    background: #6283A4;
     width: 20px;
 	border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
@@ -340,19 +340,19 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
 }
  QScrollBar:vertical {
 	border: none;
-    background-color: #6272a4;
+    background-color: #6283A4;
     width: 8px;
     margin: 21px 0 21px 0;
 	border-radius: 0px;
  }
  QScrollBar::handle:vertical {	
-	background: rgb(189, 147, 249);
+	background: #2B5D7A;
     min-height: 25px;
 	border-radius: 4px
  }
  QScrollBar::add-line:vertical {
      border: none;
-    background: #6272a4;
+    background: #6283A4;
      height: 20px;
 	border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -361,7 +361,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
  }
  QScrollBar::sub-line:vertical {
 	border: none;
-    background: #6272a4;
+    background: #6283A4;
      height: 20px;
 	border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -379,42 +379,42 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 CheckBox */
 QCheckBox::indicator {
-    border: 3px solid #6272a4;
+    border: 3px solid #6283A4;
 	width: 15px;
 	height: 15px;
 	border-radius: 10px;
-    background: #6272a4;
+    background: #6283A4;
 }
 QCheckBox::indicator:hover {
     border: 3px solid rgb(119, 136, 187);
 }
 QCheckBox::indicator:checked {
-    background: 3px solid #bd93f9;
-	border: 3px solid #bd93f9;	
+    background: 3px solid #384D62;
+	border: 3px solid #6283A4;
 	background-image: url(:/icons/images/icons/cil-check-alt.png);
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 RadioButton */
 QRadioButton::indicator {
-    border: 3px solid #6272a4;
+    border: 3px solid #6283A4;
 	width: 15px;
 	height: 15px;
 	border-radius: 10px;
-    background: #6272a4;
+    background: #6283A4;
 }
 QRadioButton::indicator:hover {
     border: 3px solid rgb(119, 136, 187);
 }
 QRadioButton::indicator:checked {
-    background: 3px solid #bd93f9;
-	border: 3px solid #bd93f9;	
+    background: 3px solid #384D62;
+	border: 3px solid #6283A4;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 ComboBox */
 QComboBox{
-	background-color: #6272a4;
+	background-color: #6283A4;
 	border-radius: 5px;
 	border: 2px solid #6272a4;
 	padding: 5px;
@@ -422,14 +422,14 @@ QComboBox{
     color: #f8f8f2;
 }
 QComboBox:hover{
-	border: 2px solid #7284b9;
+	border: 2px solid #7490BA;
 }
 QComboBox::drop-down {
 	subcontrol-origin: padding;
 	subcontrol-position: top right;
 	width: 25px; 
 	border-left-width: 3px;
-	border-left-color: #6272a4;
+	border-left-color: #6285A4;
 	border-left-style: solid;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;	
@@ -438,10 +438,10 @@ QComboBox::drop-down {
 	background-repeat: no-reperat;
  }
 QComboBox QAbstractItemView {
-	color: rgb(255, 121, 198);	
-	background-color: #6272a4;
+	color: #9CCBF9;
+	background-color: #6283A4;
 	padding: 10px;
-	selection-background-color: #6272a4;
+	selection-background-color: #6283A4;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -450,13 +450,13 @@ QSlider::groove:horizontal {
     border-radius: 5px;
     height: 10px;
 	margin: 0px;
-	background-color: #6272a4;
+	background-color: #6283A4;
 }
 QSlider::groove:horizontal:hover {
 	background-color: #6272a4;
 }
 QSlider::handle:horizontal {
-    background-color: rgb(189, 147, 249);
+    background-color: #2B5D7A;
     border: none;
     height: 10px;
     width: 10px;
@@ -464,23 +464,23 @@ QSlider::handle:horizontal {
 	border-radius: 5px;
 }
 QSlider::handle:horizontal:hover {
-    background-color: rgb(195, 155, 255);
+    background-color: #234C64;
 }
 QSlider::handle:horizontal:pressed {
-    background-color: rgb(255, 121, 198);
+    background-color: #234C64;
 }
 
 QSlider::groove:vertical {
     border-radius: 5px;
     width: 10px;
     margin: 0px;
-	background-color: #6272a4;
+	background-color: #6283A4;
 }
 QSlider::groove:vertical:hover {
 	background-color: #6272a4;
 }
 QSlider::handle:vertical {
-    background-color: rgb(189, 147, 249);
+    background-color: #2B5D7A;
 	border: none;
     height: 10px;
     width: 10px;
@@ -488,45 +488,45 @@ QSlider::handle:vertical {
 	border-radius: 5px;
 }
 QSlider::handle:vertical:hover {
-    background-color: rgb(195, 155, 255);
+    background-color: #234C64;
 }
 QSlider::handle:vertical:pressed {
-    background-color: rgb(255, 121, 198);
+    background-color: #234C64;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 CommandLinkButton */
 #pagesContainer QCommandLinkButton {	
-	color: rgb(255, 121, 198);
+	color: #6283A4;
 	border-radius: 5px;
 	padding: 5px;
-    border: 2px solid #ff79c6;
-    color: #ff79c6;
+    border: 2px solid #6283A4;
+    color: #6283A4;
 }
 #pagesContainer QCommandLinkButton:hover {	
-	color: rgb(255, 170, 255);
+	color: #6283A4;
 	background-color: #6272a4;
 }
 #pagesContainer QCommandLinkButton:pressed {	
-	color: rgb(189, 147, 249);
-	background-color: #586796;
+	color: #6283A4;
+	background-color: #243E5B;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Button */
 #pagesContainer QPushButton {
 	border: 2px solid #6272a4;
-	border-radius: 5px;	
-	background-color: #6272a4;
+	border-radius: 5px;
+	background-color: #6283A4;
     color: #f8f8f2;
 }
 #pagesContainer QPushButton:hover {
-	background-color: #7082b6;
-	border: 2px solid #7082b6;
+	background-color: #6283A4;
+	border: 2px solid #4C6987;
 }
 #pagesContainer QPushButton:pressed {	
-	background-color: #546391;
-	border: 2px solid #ff79c6;
+	background-color: #243E5B;
+	border: 2px solid #243E5B;
 }
 
 
