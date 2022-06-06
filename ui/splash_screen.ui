@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>340</width>
+    <width>339</width>
     <height>340</height>
    </rect>
   </property>
@@ -63,7 +63,7 @@
      <property name="styleSheet">
       <string notr="true">QFrame{
 	border-radius: 150px;
-	background-color: rgba(77, 77, 127, 120);
+	background-color: #6283A4;
 }</string>
      </property>
      <property name="frameShape">
@@ -85,7 +85,7 @@
      <property name="styleSheet">
       <string notr="true">QFrame{
 	border-radius: 135px;
-	background-color: rgb(77, 77, 127);
+	background-color: #2B5D7A;
 }</string>
      </property>
      <property name="frameShape">
@@ -94,7 +94,7 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -117,7 +117,7 @@
 color: #FFFFFF</string>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#9b9bff;&quot;&gt;YOUR&lt;/span&gt; APPLICATION NAME&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#fdde6c;&quot;&gt;BEAU RIVAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -167,7 +167,7 @@ color: #FFFFFF</string>
          <property name="styleSheet">
           <string notr="true">QLabel{
 	border-radius: 10px;	
-	background-color: rgb(93, 93, 154);
+	background-color: #6283A4;
 	color: #FFFFFF;
 	margin-left: 40px;
 	margin-right: 40px;
@@ -194,10 +194,10 @@ color: #FFFFFF</string>
          </property>
          <property name="styleSheet">
           <string notr="true">background-color: none;
-color: rgb(155, 155, 255);</string>
+color : #6283A4;</string>
          </property>
          <property name="text">
-          <string>by: Wanderson M. Pimenta</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#aaaa7f;&quot;&gt;by: Otman LAHRECHE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>

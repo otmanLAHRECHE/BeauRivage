@@ -116,32 +116,26 @@ class MainWindow(QMainWindow):
         newHtml = htmlText.replace("{VALUE}", str(self.jumper))
 
         if (value > self.jumper):
-            # APPLY NEW PERCENTAGE TEXT
+
             self.labelPercentage.setText(newHtml)
             self.jumper += 10
 
-        # SET VALUE TO PROGRESS BAR
-        # fix max value error if > than 100
+
         if value >= 100: value = 1.000
         self.progressBarValue(value)
 
-        # CLOSE SPLASH SCREE AND OPEN APP
+
         if self.counter > 100:
-            # STOP TIMER
+
             self.timer.stop()
 
-            # SHOW MAIN WINDOW
             self.main = MainWindow()
             self.main.show()
 
-            # CLOSE SPLASH SCREEN
             self.close()
 
-        # INCREASE COUNTER
         self.counter += 0.5
 
-        ## DEF PROGRESS BAR VALUE
-        ########################################################################
 
     def progressBarValue(self, value):
 
