@@ -20,7 +20,7 @@ import platform
 
 # IMPORT / GUI AND MODULES AND WIDGETS
 # ///////////////////////////////////////////////////////////////
-from PyQt5 import Qt, uic, QtWidgets
+from PyQt5 import Qt, uic, QtWidgets, QtCore
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow, QHeaderView, QApplication
 
@@ -45,283 +45,131 @@ widgets = None
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        uic.loadUi("./ui/login_.ui", self)
+        uic.loadUi("./ui/splash_screen.ui", self)
 
+        self.counter = 0
+        self.jumper = 0
 
 
-        self.frame_size_grip = self.findChild(QtWidgets.QFrame, "frame_size_grip")
 
-        self.appMargins = self.findChild(QtWidgets.QVBoxLayout, "appMargins")
 
-        self.bgApp = self.findChild(QtWidgets.QFrame, "bgApp")
+        self.centralwidget = self.findChild(QtWidgets.QWidget, "centralwidget")
 
-        self.appLayout = self.findChild(QtWidgets.QHBoxLayout, "appLayout")
 
-        self.leftMenuBg = self.findChild(QtWidgets.QFrame, "leftMenuBg")
+        self.circularProgressBarBase = self.findChild(QtWidgets.QFrame, "circularProgressBarBase")
 
-        self.verticalLayout_3 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_3")
 
-        self.topLogoInfo = self.findChild(QtWidgets.QFrame, "topLogoInfo")
+        self.circularProgress = self.findChild(QtWidgets.QFrame, "circularProgress")
 
-        self.topLogo = self.findChild(QtWidgets.QFrame, "topLogo")
 
-        self.titleLeftApp = self.findChild(QtWidgets.QLabel, "titleLeftApp")
+        self.circularBg = self.findChild(QtWidgets.QFrame, "circularBg")
 
-        self.titleLeftDescription = self.findChild(QtWidgets.QLabel, "titleLeftDescription")
 
-        self.leftMenuFrame = self.findChild(QtWidgets.QFrame, "leftMenuFrame")
+        self.container = self.findChild(QtWidgets.QFrame, "container")
 
-        self.verticalMenuLayout = self.findChild(QtWidgets.QVBoxLayout, "verticalMenuLayout")
 
-        self.toggleBox = self.findChild(QtWidgets.QFrame, "toggleBox")
+        self.widget = self.findChild(QtWidgets.QWidget, "widget")
 
-        self.verticalLayout_4 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_4")
-
-        self.toggleButton = self.findChild(QtWidgets.QPushButton, "toggleButton")
-
-        self.verticalLayout_8 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_8")
-
-        self.btn_home = self.findChild(QtWidgets.QPushButton, "btn_home")
-
-        self.btn_widgets = self.findChild(QtWidgets.QPushButton, "btn_widgets")
-
-        self.btn_new = self.findChild(QtWidgets.QPushButton, "btn_new")
-
-        self.btn_save = self.findChild(QtWidgets.QPushButton, "btn_save")
-
-        self.btn_exit = self.findChild(QtWidgets.QPushButton, "btn_exit")
-
-        self.bottomMenu = self.findChild(QtWidgets.QFrame, "bottomMenu")
-
-        self.verticalLayout_9 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_9")
-
-        self.toggleLeftBox = self.findChild(QtWidgets.QPushButton, "toggleLeftBox")
-
-        self.extraLeftBox = self.findChild(QtWidgets.QFrame, "extraLeftBox")
-
-        self.extraColumLayout = self.findChild(QtWidgets.QVBoxLayout, "extraColumLayout")
-
-        self.extraTopBg = self.findChild(QtWidgets.QFrame, "extraTopBg")
-
-        self.verticalLayout_5 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_5")
-
-        self.extraTopLayout = self.findChild(QtWidgets.QGridLayout, "extraTopLayout")
-
-        self.extraIcon = self.findChild(QtWidgets.QFrame, "extraIcon")
-
-        self.extraLabel = self.findChild(QtWidgets.QLabel, "extraLabel")
-
-        self.extraCloseColumnBtn = self.findChild(QtWidgets.QPushButton, "extraCloseColumnBtn")
-
-        self.extraContent = self.findChild(QtWidgets.QFrame, "extraContent")
-
-        self.verticalLayout_12 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_12")
-
-        self.extraTopMenu = self.findChild(QtWidgets.QFrame, "extraTopMenu")
-
-        self.verticalLayout_11 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_11")
-
-        self.btn_share = self.findChild(QtWidgets.QPushButton, "btn_share")
-
-        self.btn_adjustments = self.findChild(QtWidgets.QPushButton, "btn_adjustments")
-
-        self.btn_more = self.findChild(QtWidgets.QPushButton, "btn_more")
-
-        self.extraCenter = self.findChild(QtWidgets.QFrame, "extraCenter")
-
-        self.verticalLayout_10 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_10")
-
-        self.textEdit = self.findChild(QtWidgets.QTextEdit, "textEdit")
-
-        self.extraBottom = self.findChild(QtWidgets.QFrame, "extraBottom")
-
-        self.contentBox = self.findChild(QtWidgets.QFrame, "contentBox")
-
-        self.verticalLayout_2 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_2")
-
-        self.contentTopBg = self.findChild(QtWidgets.QFrame, "contentTopBg")
-
-        self.horizontalLayout = self.findChild(QtWidgets.QHBoxLayout, "horizontalLayout")
-
-        self.leftBox = self.findChild(QtWidgets.QFrame, "leftBox")
-
-        self.horizontalLayout_3 = self.findChild(QtWidgets.QHBoxLayout, "horizontalLayout_3")
-
-        self.titleRightInfo = self.findChild(QtWidgets.QLabel, "titleRightInfo")
-
-        self.rightButtons = self.findChild(QtWidgets.QFrame, "rightButtons")
-
-        self.horizontalLayout_2 = self.findChild(QtWidgets.QFrame, "horizontalLayout_2")
-
-        self.settingsTopBtn = self.findChild(QtWidgets.QPushButton, "settingsTopBtn")
-
-        self.minimizeAppBtn = self.findChild(QtWidgets.QPushButton, "minimizeAppBtn")
-
-        self.maximizeRestoreAppBtn = self.findChild(QtWidgets.QPushButton, "maximizeRestoreAppBtn")
-
-        self.closeAppBtn = self.findChild(QtWidgets.QPushButton, "closeAppBtn")
-
-        self.contentBottom = self.findChild(QtWidgets.QFrame, "contentBottom")
-
-        self.verticalLayout_6 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_6")
-
-        self.content = self.findChild(QtWidgets.QFrame, "content")
-
-        self.horizontalLayout_4 = self.findChild(QtWidgets.QHBoxLayout, "horizontalLayout_4")
-
-        self.pagesContainer = self.findChild(QtWidgets.QFrame, "pagesContainer")
-
-        self.verticalLayout_15 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_15")
-
-        self.stackedWidget = self.findChild(QtWidgets.QStackedWidget, "stackedWidget")
-
-        self.home = self.findChild(QtWidgets.QWidget, "home")
-
-        self.widgets = self.findChild(QtWidgets.QWidget, "widgets")
-
-        self.verticalLayout = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout")
-
-        self.row_1 = self.findChild(QtWidgets.QFrame, "row_1")
-
-        self.verticalLayout_16 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_16")
-
-        self.frame_div_content_1 = self.findChild(QtWidgets.QFrame, "frame_div_content_1")
-
-        self.verticalLayout_17 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_17")
-
-        self.frame_title_wid_1 = self.findChild(QtWidgets.QFrame, "frame_title_wid_1")
-
-        self.verticalLayout_18 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_18")
-
-        self.labelBoxBlenderInstalation = self.findChild(QtWidgets.QFrame, "labelBoxBlenderInstalation")
-
-        self.frame_content_wid_1 = self.findChild(QtWidgets.QFrame, "frame_content_wid_1")
-
-        self.horizontalLayout_9 = self.findChild(QtWidgets.QHBoxLayout, "horizontalLayout_9")
 
         self.gridLayout = self.findChild(QtWidgets.QGridLayout, "gridLayout")
 
-        self.lineEdit = self.findChild(QtWidgets.QLineEdit, "lineEdit")
 
-        self.pushButton = self.findChild(QtWidgets.QPushButton, "pushButton")
-
-        self.labelVersion_3 = self.findChild(QtWidgets.QLabel, "labelVersion_3")
-
-        self.row_2 = self.findChild(QtWidgets.QFrame, "row_2")
-
-        self.verticalLayout_19 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_19")
-
-        self.gridLayout_2 = self.findChild(QtWidgets.QGridLayout, "gridLayout_2")
-
-        self.checkBox = self.findChild(QtWidgets.QCheckBox, "checkBox")
-
-        self.radioButton = self.findChild(QtWidgets.QRadioButton, "radioButton")
-
-        self.verticalSlider = self.findChild(QtWidgets.QSlider, "verticalSlider")
-
-        self.verticalScrollBar = self.findChild(QtWidgets.QScrollBar, "verticalScrollBar")
-
-        self.scrollArea = self.findChild(QtWidgets.QScrollArea, "scrollArea")
-
-        self.scrollAreaWidgetContents = self.findChild(QtWidgets.QWidget, "scrollAreaWidgetContents")
-
-        self.horizontalLayout_11 = self.findChild(QtWidgets.QHBoxLayout, "horizontalLayout_11")
-
-        self.plainTextEdit = self.findChild(QtWidgets.QPlainTextEdit, "plainTextEdit")
-
-        self.comboBox = self.findChild(QtWidgets.QComboBox, "comboBox")
-
-        self.horizontalScrollBar = self.findChild(QtWidgets.QScrollBar, "horizontalScrollBar")
-
-        self.commandLinkButton = self.findChild(QtWidgets.QCommandLinkButton, "commandLinkButton")
-
-        self.horizontalSlider = self.findChild(QtWidgets.QSlider, "horizontalSlider")
-
-        self.row_3 = self.findChild(QtWidgets.QFrame, "row_3")
-
-        self.horizontalLayout_12 = self.findChild(QtWidgets.QHBoxLayout, "horizontalLayout_12")
-
-        self.tableWidget = self.findChild(QtWidgets.QTableWidget, "tableWidget")
-
-        self.new_page = self.findChild(QtWidgets.QWidget, "new_page")
-
-        self.verticalLayout_20 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_20")
-
-        self.label = self.findChild(QtWidgets.QLabel, "label")
-
-        self.extraRightBox = self.findChild(QtWidgets.QFrame, "extraRightBox")
-
-        self.verticalLayout_7 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_7")
-
-        self.themeSettingsTopDetail = self.findChild(QtWidgets.QFrame, "themeSettingsTopDetail")
-
-        self.contentSettings = self.findChild(QtWidgets.QFrame, "contentSettings")
-
-        self.verticalLayout_13 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_13")
-
-        self.topMenus = self.findChild(QtWidgets.QFrame, "topMenus")
-
-        self.verticalLayout_14 = self.findChild(QtWidgets.QVBoxLayout, "verticalLayout_14")
-
-        self.btn_message = self.findChild(QtWidgets.QPushButton, "btn_message")
-
-        self.btn_print = self.findChild(QtWidgets.QPushButton, "btn_print")
-
-        self.btn_logout = self.findChild(QtWidgets.QPushButton, "btn_logout")
-
-        self.bottomBar = self.findChild(QtWidgets.QPushButton, "bottomBar")
-
-        self.horizontalLayout_5 = self.findChild(QtWidgets.QHBoxLayout, "horizontalLayout_5")
-
-        self.creditsLabel = self.findChild(QtWidgets.QLabel, "creditsLabel")
-
-        self.version = self.findChild(QtWidgets.QLabel, "version")
-
-
-        self.user_name = self.findChild(QtWidgets.QLineEdit, "lineEdit")
-        self.password = self.findChild(QtWidgets.QLineEdit, "lineEdit_2")
-
-        self.login_button = self.findChild(QtWidgets.QPushButton, "pushButton")
-
-        self.error_label = self.findChild(QtWidgets.QLabel, "label_155")
-        self.error_label.setVisible(False)
-        self.login_button.clicked.connect(self.login_event)
+        self.labelTitle = self.findChild(QtWidgets.QLabel, "labelTitle")
 
 
 
-
-        modules.Settings.ENABLE_CUSTOM_TITLE_BAR = True
-        modules.UIFunctions.uiDefinitions(self)
+        self.labelPercentage = self.findChild(QtWidgets.QLabel, "labelPercentage")
 
 
-    def login_event(self):
+        self.labelLoadingInfo = self.findChild(QtWidgets.QLabel, "labelLoadingInfo")
 
-        self.error_label.setVisible(False)
 
-        if self.user_name.text() == "" and self.password.text() == "":
-            self.next_page = main_app.MainAppUi()
-            self.next_page.show()
+
+        self.labelCredits = self.findChild(QtWidgets.QLabel, "labelCredits")
+
+        self.progressBarValue(0)
+
+
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+
+        self.shadow = QGraphicsDropShadowEffect(self)
+        self.shadow.setBlurRadius(20)
+        self.shadow.setXOffset(0)
+        self.shadow.setYOffset(0)
+        self.shadow.setColor(QColor(0, 0, 0, 120))
+        self.circularBg.setGraphicsEffect(self.shadow)
+
+        self.timer = QtCore.QTimer()
+        self.timer.timeout.connect(self.progress)
+        self.timer.start(15)
+
+
+    def progress(self):
+
+        value = self.counter
+
+        # HTML TEXT PERCENTAGE
+        htmlText = """<p><span style=" font-size:68pt;">{VALUE}</span><span style=" font-size:58pt; vertical-align:super;">%</span></p>"""
+
+        # REPLACE VALUE
+        newHtml = htmlText.replace("{VALUE}", str(self.jumper))
+
+        if (value > self.jumper):
+            # APPLY NEW PERCENTAGE TEXT
+            self.labelPercentage.setText(newHtml)
+            self.jumper += 10
+
+        # SET VALUE TO PROGRESS BAR
+        # fix max value error if > than 100
+        if value >= 100: value = 1.000
+        self.progressBarValue(value)
+
+        # CLOSE SPLASH SCREE AND OPEN APP
+        if self.counter > 100:
+            # STOP TIMER
+            self.timer.stop()
+
+            # SHOW MAIN WINDOW
+            self.main = MainWindow()
+            self.main.show()
+
+            # CLOSE SPLASH SCREEN
             self.close()
-        else:
-            self.error_label.setVisible(True)
+
+        # INCREASE COUNTER
+        self.counter += 0.5
+
+        ## DEF PROGRESS BAR VALUE
+        ########################################################################
+
+    def progressBarValue(self, value):
+
+        # PROGRESSBAR STYLESHEET BASE
+        styleSheet = """
+                QFrame{
+                	border-radius: 150px;
+                	background-color: qconicalgradient(cx:0.5, cy:0.5, angle:90, stop:{STOP_1} rgba(255, 0, 127, 0), stop:{STOP_2} rgba(85, 170, 255, 255));
+                }
+                """
+
+        # GET PROGRESS BAR VALUE, CONVERT TO FLOAT AND INVERT VALUES
+        # stop works of 1.000 to 0.000
+        progress = (100 - value) / 100.0
+
+        # GET NEW VALUES
+        stop_1 = str(progress - 0.001)
+        stop_2 = str(progress)
+
+        # SET VALUES TO NEW STYLESHEET
+        newStylesheet = styleSheet.replace("{STOP_1}", stop_1).replace("{STOP_2}", stop_2)
+
+        # APPLY STYLESHEET WITH NEW VALUES
+        self.circularProgress.setStyleSheet(newStylesheet)
 
 
 
-    def resizeEvent(self, event):
-        # Update Size Grips
-        modules.UIFunctions.resize_grips(self)
 
-    # MOUSE CLICK EVENTS
-    # ///////////////////////////////////////////////////////////////
-    def mousePressEvent(self, event):
-        # SET DRAG POS WINDOW
-        self.dragPos = event.globalPos()
-
-        # PRINT MOUSE EVENTS
-        if event.buttons() == Qt.LeftButton:
-            print('Mouse click: LEFT CLICK')
-        if event.buttons() == Qt.RightButton:
-            print('Mouse click: RIGHT CLICK')
 
 
 if __name__ == "__main__":
