@@ -118,28 +118,21 @@ class MainWindow(QMainWindow):
         if (value > self.jumper):
 
             self.labelPercentage.setText(newHtml)
-            self.jumper += 10
+            self.jumper += 1
 
 
         if value >= 100: value = 1.000
         self.progressBarValue(value)
 
 
-        if self.counter > 100:
 
-            self.timer.stop()
-
-            self.main = MainWindow()
-            self.main.show()
-
-            self.close()
 
         self.counter += 0.5
 
 
     def progressBarValue(self, value):
 
-        # PROGRESSBAR STYLESHEET BASE
+
         styleSheet = """
                 QFrame{
                 	border-radius: 150px;
@@ -147,18 +140,17 @@ class MainWindow(QMainWindow):
                 }
                 """
 
-        # GET PROGRESS BAR VALUE, CONVERT TO FLOAT AND INVERT VALUES
-        # stop works of 1.000 to 0.000
+
         progress = (100 - value) / 100.0
 
-        # GET NEW VALUES
+
         stop_1 = str(progress - 0.001)
         stop_2 = str(progress)
 
-        # SET VALUES TO NEW STYLESHEET
+
         newStylesheet = styleSheet.replace("{STOP_1}", stop_1).replace("{STOP_2}", stop_2)
 
-        # APPLY STYLESHEET WITH NEW VALUES
+
         self.circularProgress.setStyleSheet(newStylesheet)
 
 
