@@ -15,7 +15,9 @@ import modules
 from modules import *
 from modules import main_app
 from widgets import *
-os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
+
+import os
+os.environ["QT_FONT_DPI"] = "96"
 
 
 

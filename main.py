@@ -26,7 +26,8 @@ from PyQt5.QtWidgets import QMainWindow, QHeaderView, QApplication
 
 import modules
 from modules import *
-from modules import main_app
+from modules import main_app, login
+from modules.threads import StartUpLoadingThread
 from widgets import *
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
@@ -100,39 +101,44 @@ class MainWindow(QMainWindow):
         self.shadow.setColor(QColor(0, 0, 0, 120))
         self.circularBg.setGraphicsEffect(self.shadow)
 
-        self.timer = QtCore.QTimer()
-        self.timer.timeout.connect(self.progress)
-        self.timer.start(15)
+
+        self.thread = StartUpLoadingThread()
+        self.thread._signal.connect(self.signal_accepted)
+        self.thread._signal_result.connect(self.signal_accepted)
+        self.thread.start()
 
 
-    def progress(self):
+    def signal_accepted(self, pr):
+        if type(pr) == int:
+            self.progress(pr)
+        else:
+            self.next_page = login.Login_Ui()
+            self.next_page.show()
+            self.close()
 
-        value = self.counter
+    def progress(self, prog):
+
+        value = prog
 
         # HTML TEXT PERCENTAGE
         htmlText = """<p><span style=" font-size:68pt;">{VALUE}</span><span style=" font-size:58pt; vertical-align:super;">%</span></p>"""
 
+
         # REPLACE VALUE
-        newHtml = htmlText.replace("{VALUE}", str(self.jumper))
+        newHtml = htmlText.replace("{VALUE}", str(value))
 
-        if (value > self.jumper):
-
-            self.labelPercentage.setText(newHtml)
-            self.jumper += 1
+        self.labelPercentage.setText(newHtml)
 
 
-        if value >= 100: value = 1.000
         self.progressBarValue(value)
 
 
 
 
-        self.counter += 0.5
-
 
     def progressBarValue(self, value):
 
-
+        # PROGRESSBAR STYLESHEET BASE
         styleSheet = """
                 QFrame{
                 	border-radius: 150px;
@@ -140,17 +146,20 @@ class MainWindow(QMainWindow):
                 }
                 """
 
-
+        # GET PROGRESS BAR VALUE, CONVERT TO FLOAT AND INVERT VALUES
+        # stop works of 1.000 to 0.000
         progress = (100 - value) / 100.0
 
-
+        # GET NEW VALUES
         stop_1 = str(progress - 0.001)
         stop_2 = str(progress)
 
 
+
+        # SET VALUES TO NEW STYLESHEET
         newStylesheet = styleSheet.replace("{STOP_1}", stop_1).replace("{STOP_2}", stop_2)
 
-
+        # APPLY STYLESHEET WITH NEW VALUES
         self.circularProgress.setStyleSheet(newStylesheet)
 
 

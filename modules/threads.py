@@ -1,7 +1,4 @@
-
-
-
-
+import time
 
 import PyQt5
 from PyQt5.QtCore import QThread, pyqtSignal
@@ -21,5 +18,5 @@ class StartUpLoadingThread(QThread):
     def run(self):
         for i in range(100):
             self._signal.emit(i)
-            # time.sleep(0.1)
+            time.sleep(0.005)
         self._signal_result.emit(True)
