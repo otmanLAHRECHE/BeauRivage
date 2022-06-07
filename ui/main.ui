@@ -549,21 +549,18 @@ Button */
 
 </string>
    </property>
-   <layout class="QVBoxLayout" name="appMargins">
-    <property name="spacing">
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
+    <property name="leftMargin">
      <number>0</number>
     </property>
-    <property name="leftMargin">
-     <number>10</number>
-    </property>
     <property name="topMargin">
-     <number>10</number>
+     <number>0</number>
     </property>
     <property name="rightMargin">
-     <number>10</number>
+     <number>0</number>
     </property>
     <property name="bottomMargin">
-     <number>10</number>
+     <number>0</number>
     </property>
     <item>
      <widget class="QFrame" name="bgApp">
@@ -1886,13 +1883,11 @@ p, li { white-space: pre-wrap; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>1</number>
+                      <number>0</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="styleSheet">
-                       <string notr="true">background-image: url(:/images/images/images/app_image.png);
-background-position: center;
-background-repeat: no-repeat;</string>
+                       <string notr="true"/>
                       </property>
                      </widget>
                      <widget class="QWidget" name="widgets">
@@ -2239,7 +2234,7 @@ background-repeat: no-repeat;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>361</width>
+                                 <width>371</width>
                                  <height>218</height>
                                 </rect>
                                </property>
