@@ -31,32 +31,14 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">/* /////////////////////////////////////////////////////////////////////////////////////////////////
-
-SET APP STYLESHEET - FULL STYLES HERE
-DARK THEME - DRACULA COLOR BASED
-
-# BY: WANDERSON M.PIMENTA
-# PROJECT MADE WITH: Qt Designer and PySide6
-# V: 1.0.0
-#
-# This project can be used freely for all uses, as long as they maintain the
-# respective credits only in the Python scripts, any information in the visual
-# interface (GUI) can be modified without any implication.
-#
-# There are limitations on Qt licenses if you want to use your products
-# commercially, I recommend reading them on the official website:
-# https://doc.qt.io/qtforpython/licenses.html
-
-///////////////////////////////////////////////////////////////////////////////////////////////// */
+    <string notr="true">
 
 QWidget{
 	color: #333;
 	font: 10pt &quot;Segoe UI&quot;;
 }
 
-/* /////////////////////////////////////////////////////////////////////////////////////////////////
-Tooltip */
+
 QToolTip {
 	color: #333;
 	background-color: #f8f8f2;
@@ -686,6 +668,11 @@ Button */
                <width>42</width>
                <height>42</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-image: url(&quot;./images/images/app_image.png&quot;);
+background-position: centered;
+background-repeat: no-repeat;</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::NoFrame</enum>

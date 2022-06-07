@@ -336,6 +336,8 @@ class MainAppUi(QtWidgets.QMainWindow):
 
         self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
+
+
         self.btn_home.clicked.connect(self.buttonClick)
         self.btn_widgets.clicked.connect(self.buttonClick)
         self.btn_new.clicked.connect(self.buttonClick)
