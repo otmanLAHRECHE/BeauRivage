@@ -331,6 +331,7 @@ class MainAppUi(QtWidgets.QMainWindow):
         self.toggleButton.clicked.connect(lambda: modules.UIFunctions.toggleMenu(self, True))
 
         modules.UIFunctions.uiDefinitions(self)
+        self.maximizeRestoreAppBtn.clicked.connect(lambda: modules.UIFunctions.maximize_restore(self))
 
 
         self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
@@ -414,5 +415,9 @@ class MainAppUi(QtWidgets.QMainWindow):
             print('Mouse click: LEFT CLICK')
         if event.buttons() == Qt.RightButton:
             print('Mouse click: RIGHT CLICK')
+
+
+
+
 
 
