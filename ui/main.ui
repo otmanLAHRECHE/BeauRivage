@@ -2035,55 +2035,6 @@ border-color: #243E5B;</string>
                                </layout>
                               </widget>
                              </item>
-                             <item>
-                              <widget class="QFrame" name="frame_5">
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>250</height>
-                                </size>
-                               </property>
-                               <property name="frameShape">
-                                <enum>QFrame::StyledPanel</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
-                               </property>
-                               <layout class="QVBoxLayout" name="verticalLayout_26">
-                                <property name="bottomMargin">
-                                 <number>2</number>
-                                </property>
-                                <item>
-                                 <widget class="QLabel" name="label_5">
-                                  <property name="sizePolicy">
-                                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                                    <horstretch>0</horstretch>
-                                    <verstretch>0</verstretch>
-                                   </sizepolicy>
-                                  </property>
-                                  <property name="text">
-                                   <string>CHAMBRES :</string>
-                                  </property>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_8">
-                                  <property name="styleSheet">
-                                   <string notr="true">background-color: #6283A4;
-border-radius : 5px;
-border-color: #243E5B;</string>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
-                              </widget>
-                             </item>
                             </layout>
                            </widget>
                           </item>
@@ -2206,7 +2157,7 @@ border-color: #243E5B;</string>
                                  <number>2</number>
                                 </property>
                                 <item>
-                                 <widget class="QLabel" name="label_7">
+                                 <widget class="QLabel" name="label_5">
                                   <property name="sizePolicy">
                                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                                     <horstretch>0</horstretch>
@@ -2214,25 +2165,22 @@ border-color: #243E5B;</string>
                                    </sizepolicy>
                                   </property>
                                   <property name="text">
-                                   <string>Ajouter un occupation :</string>
+                                   <string>CHAMBRES :</string>
                                   </property>
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QFrame" name="frame_12">
+                                 <widget class="QFrame" name="frame_8">
                                   <property name="styleSheet">
-                                   <string notr="true">background-color: #BCD1D6;
+                                   <string notr="true">background-color: #6283A4;
 border-radius : 5px;
 border-color: #243E5B;</string>
                                   </property>
                                   <property name="frameShape">
-                                   <enum>QFrame::NoFrame</enum>
+                                   <enum>QFrame::StyledPanel</enum>
                                   </property>
                                   <property name="frameShadow">
                                    <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <property name="lineWidth">
-                                   <number>1</number>
                                   </property>
                                  </widget>
                                 </item>
@@ -2591,7 +2539,7 @@ border-color: #243E5B;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>371</width>
+                                 <width>218</width>
                                  <height>218</height>
                                 </rect>
                                </property>
